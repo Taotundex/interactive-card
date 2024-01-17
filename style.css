@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+body, .body{
+    overflow-x: hidden;
+}
+.body{
+    position: relative;
+}
+.body .left {
+    height: 100vh;
+    background: url(images/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.body .left .front{
+    position: relative;
+    height: 215px;
+    width: 90%;
+    top: 15%;
+    left: 30%;
+}
+.body .left .back{
+    position: relative;
+    height: 215px;
+    width: 90%;
+    top: 20%;
+    left: 50%;
+}
+.body .left .front .numbers svg{
+    /* z-index: 1000000 !important; */
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+.body .left .front .numbers #cardnum{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+.body .left .back #mycvv{
+    position: absolute;
+    top: 44%;
+    left: 80%;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.body .left .front .numbers .d-flex{
+    position: absolute;
+    top: 80%;
+    width: 85%;
+    left: 5%;
+}
+.body .left .front .numbers .d-flex h6{
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.body .right{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body .left img:first-child{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /* translate: 30% 30%; */
+}
+.body .left img:last-child{
+    width: 100%;
+    height: 215px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.body .right form{
+    width: 40%;
+}
+.body .right .clas{
+    width: 40%;
+}
+#cardname{
+    text-transform: uppercase;
+}
+.body .right form input{
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid hsl(270, 3%, 87%);
+    outline: none;
+    margin: 3px 0 20px 0;
+}
+.body .right form label{
+    color: hsl(278, 68%, 11%);
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.body .right button{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1.5px solid hsl(278, 68%, 11%);
+    background: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+}
+.body .right form input::-webkit-inner-spin-button{
+    display: none;
+}
+::placeholder{
+    font-size: 18px;
+    color: hsl(270, 3%, 87%);
+}
+#displayDiv{
+    display: none;
+}
+
+
+@media screen and (max-width: 767px) {
+    .body .right form{
+        width: 85%;
+    }
+    .body .right .clas{
+        width: 85%;
+    }
+    .body .left {
+        height: 40vh;
+        background: url(images/bg-main-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .body .right{
+        /* padding-top: 100px; */
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .body .left .front{
+        position: relative;
+        height: 170px;
+        width: 100%;
+        top: 50%;
+        left: 5%;
+        z-index: 1;
+    }
+    .body .left .back{
+        position: relative;
+        height: 170px;
+        width: 100%;
+        top: -50%;
+        left: 20%;
+    }
+    .body .left .front .numbers #cardnum{
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+    .body .left .front .numbers h6{
+        font-size: 14px !important;
+    }
+    .body .left .back #mycvv{
+        position: absolute;
+        top: 44%;
+        left: 57%;
+        letter-spacing: 2px;
+        font-size: 14px;
+        z-index: 10000;
+    }
+    .body .left .front .numbers .d-flex{
+        position: absolute;
+        top: 80%;
+        width: 65%;
+        left: 5%;
+    }
+    .body .left .front .numbers .d-flex h6{
+        letter-spacing: 2px;
+        font-size: 18px;
+    }
+    .body .left img:first-child{
+        width: 75%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    .body .left img:last-child{
+        width: 75%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+    }
+}

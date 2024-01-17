@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="body">
+    <div class="row">
+      <div class="col col-lg-4 col-md-4 col-12">
+        <div class="left">
+          <div class="front text-light">
+            <img src="images/bg-card-front.png" width="100%" alt="">
+            <div class="numbers">
+              <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+              <div id="cardnum"></div>
+              <div class="d-flex justify-content-between">
+                <h6 id="cardname"></h6>
+                <h6><span id="cardexp"></span>/<span id="year"></span></h6>
+              </div>
+            </div>
+          </div>
+          <div class="back text-light">
+            <img src="images/bg-card-back.png" width="100%" alt="">
+            <div id="mycvv"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-8 col-md-8 col-12">
+        <div class="right">
+            <center class="clas" id="displayDiv">
+                <div class="img" style="margin-bottom: 25px;">
+                    <img src="images/icon-complete.svg" width="100%" style="width: 75px;" alt="">
+                </div>
+                <div class="texts">
+                    <h2>THANK YOU!</h2>
+                    <p>We've added your card details.</p>
+                    <button>Continue</button>
+                </div>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Taofeek</a>.
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

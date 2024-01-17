@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="body">
+    <div class="row">
+      <div class="col col-lg-4 col-md-4 col-12">
+        <div class="left">
+          <div class="front text-light">
+            <img src="images/bg-card-front.png" width="100%" alt="">
+            <div class="numbers">
+              <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+              <div id="cardnum"></div>
+              <div class="d-flex justify-content-between">
+                <h6 id="cardname"></h6>
+                <h6><span id="cardexp"></span>/<span id="year"></span></h6>
+              </div>
+            </div>
+          </div>
+          <div class="back text-light">
+            <img src="images/bg-card-back.png" width="100%" alt="">
+            <div id="mycvv"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-8 col-md-8 col-12">
+        <div class="right">
+          <form action="" id="displayNone" onsubmit="submitForm(event)">
+            <label for="cardholdername">CARD HOLDER NAME</label>
+            <input type="text" name="name" id="nameInput" oninput="nameCaptureInput(event)" placeholder="e. g. Aremu Taofeek" required>
+            <label for="cardnumber">CARD NUMBER</label>
+            <input type="number" name="number" id="numberInput" oninput="numberCaptureInput(event)" maxlength="16" placeholder="e. g. 1234 5678 9012 3456" required>
+            <div class="expcvv d-flex gap-4">
+              <div class="exp">
+                <label for="expirydate">EXP. DATE (MM/YY)</label>
+                <div class="d-flex gap-2">
+                  <!-- <input type="month" name="month" id="month" placeholder="MM"> -->
+                  <input type="number" name="month" id="monthInput" oninput="monthCaptureInput(event)" maxlength="2" placeholder="MM">
+                  <input type="number" name="year" id="yearInput" oninput="yearCaptureInput(event)" maxlength="2" placeholder="YY">
+                </div>
+              </div>
+              <div class="exp">
+                <label for="cvv">CVV</label>
+                <input type="password" name="cvvInput" id="cvvInput" oninput="cvvCaptureInput(event)" id="cvv" maxlength="3" placeholder="e. g. 123">
+              </div>
+            </div>
+            <button type="submit">Confirm</button>
+          </form>
+          <center class="clas" id="displayDiv">
+            <div class="img" style="margin-bottom: 25px;">
+                <img src="images/icon-complete.svg" width="100%" style="width: 75px;" alt="">
+            </div>
+            <div class="texts">
+                <h2>THANK YOU!</h2>
+                <p>We've added your card details.</p>
+                <button>Continue</button>
+            </div>
+        </center>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Taofeek</a>.
+  </div>
+
+
+
+  <script>
+      function nameCaptureInput(event) {
+        var nameInput = document.getElementById("nameInput").value;
+        var cardName = document.getElementById("cardname");
+        cardName.innerHTML = nameInput;
+      }
+      
+        function numberCaptureInput() {
+            // Get the user input
+            var numberInput = document.getElementById("numberInput").value;
+            
+
+            // Remove existing spaces (if any) and format the input
+            var formattedInput = numberInput.replace(/\s/g, '');
+            formattedInput = formattedInput.substr(0, 16);
+
+            // Insert a space after every 4 digits
+            for (var i = 4; i < formattedInput.length; i += 5) {
+                formattedInput = formattedInput.substr(0, i) + ' ' + formattedInput.substr(i);
+            }
+
+            // Display the formatted input in the DOM
+            var cardnum = document.getElementById("cardnum");
+            cardnum.innerHTML = formattedInput;
+        }   
+    
+
+        function monthCaptureInput() {
+            // Get the user input
+            var monthInput = document.getElementById("monthInput").value;
+            
+
+            // Remove existing spaces (if any) and format the input
+            var formattedInput = monthInput.replace(/\s/g, '');
+            formattedInput = formattedInput.substr(0, 2);
+
+            // Insert a space after every 4 digits
+            for (var i = 2; i < formattedInput.length; i += 2) {
+                formattedInput = formattedInput.substr(0, i);
+            }
+
+            // Display the formatted input in the DOM
+            var cardexp = document.getElementById("cardexp");
+            cardexp.innerHTML = formattedInput;
+        } 
+
+
+        function yearCaptureInput() {
+            // Get the user input
+            var yearInput = document.getElementById("yearInput").value;
+            
+
+            // Remove existing spaces (if any) and format the input
+            var formattedInput = yearInput.replace(/\s/g, '');
+            formattedInput = formattedInput.substr(0, 2);
+
+            // Insert a space after every 4 digits
+            for (var i = 2; i < formattedInput.length; i += 2) {
+                formattedInput =  formattedInput.substr(0, i);
+            }
+
+            // Display the formatted input in the DOM
+            var year = document.getElementById("year");
+            year.innerHTML = formattedInput;
+        } 
+
+
+        
+      function cvvCaptureInput(event) {
+        var cvvInput = document.getElementById("cvvInput").value;
+        var mycvv = document.getElementById("mycvv");
+        mycvv.innerHTML = cvvInput;
+      }
+      function submitForm(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Display the hidden div
+            var displayDiv = document.getElementById("displayDiv");
+            displayDiv.style.display = "block";
+            var displayNone = document.getElementById("displayNone");
+            displayNone.style.display = "none";
+        }
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
